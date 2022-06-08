@@ -12,5 +12,38 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2caa31d5c39324ab3bc9bd65c44c33, type: 3}
   m_Name: Island Data SO
   m_EditorClassIdentifier: 
-  IsLoadData: 0
-  <DragonHousesData>k__BackingField: []
+  IsLoadData: 1
+  <DragonHousesData>k__BackingField:
+  - Position: {x: -4.5, y: 0.2, z: 0.5}
+    Dragons:
+    - Name: Monday
+      <Health>k__BackingField: 12
+      <Damage>k__BackingField: 12
+      <FoodToNewLevel>k__BackingField: 21
+      <Appetite>k__BackingField: 1
+      <Icon>k__BackingField: {fileID: 0}
+    DragonsCount: 0
+  - Position: {x: 4.5, y: 0.2, z: 2.5}
+    Dragons:
+    - Name: Monday
+      <Health>k__BackingField: 12
+      <Damage>k__BackingField: 12
+      <FoodToNewLevel>k__BackingField: 21
+      <Appetite>k__BackingField: 1
+      <Icon>k__BackingField: {fileID: 0}
+    - Name: Friday
+      <Health>k__BackingField: 1
+      <Damage>k__BackingField: 11
+      <FoodToNewLevel>k__BackingField: 3.7129292
+      <Appetite>k__BackingField: 2
+      <Icon>k__BackingField: {fileID: 7236858470366593164, guid: 59d788fd6b9dbb34c9901d71187a38a8, type: 3}
+    DragonsCount: 0
+  - Position: {x: -1.5, y: 0.2, z: -1.5}
+    Dragons:
+    - Name: Monday
+      <Health>k__BackingField: 12
+      <Damage>k__BackingField: 12
+      <FoodToNewLevel>k__BackingField: 21
+      <Appetite>k__BackingField: 1
+      <Icon>k__BackingField: {fileID: 0}
+    DragonsCount: 0

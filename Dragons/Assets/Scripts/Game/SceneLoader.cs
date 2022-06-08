@@ -7,24 +7,6 @@ public class SceneLoader : MonoBehaviour
 {
     public SceneManagerSO SceneManagerSO;
 
-    private void Awake()
-    {
-        if (!SceneManagerSO.IsSceneLoadedOnce)
-        {
-            SceneManagerSO.IsSceneLoadedOnce = true;
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-
-    private void OnApplicationQuit()
-    {
-        SceneManagerSO.IsSceneLoadedOnce = false;
-    }
-
     private void OnEnable()
     {
         SceneManagerSO.OnDragonIconSelected += GoToTheCaveScene;
@@ -37,7 +19,20 @@ public class SceneLoader : MonoBehaviour
         SceneManagerSO.OnExitSelected -= GoTheGameScene;
     }
 
-    private void GoToTheCaveScene() => GoToTheScene("Cave");
-    private void GoTheGameScene() => GoToTheScene("Game");
-    public void GoToTheScene(string sceneName) => SceneManager.LoadScene(sceneName);
+    private void GoToTheCaveScene()
+    {
+        SceneManager.UnloadSceneAsync("Game");
+        GoToTheScene("Cave");
+    }
+
+    private void GoTheGameScene()
+    {
+        SceneManager.UnloadSceneAsync("Cave");
+        GoToTheScene("Game");
+    }
+
+    public void GoToTheScene(string sceneName)
+    {
+        SceneManager.LoadScene(sceneName,LoadSceneMode.Additive);
+    }
 }

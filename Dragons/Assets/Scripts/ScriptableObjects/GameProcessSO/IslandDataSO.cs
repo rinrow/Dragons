@@ -16,9 +16,6 @@ public class IslandDataSO : ScriptableObject
     {
         DragonHousesData.Add(DragonHouseData.ConvertToDHD(d));
     }
-
-    [ContextMenu("ClearAllData")]
-    public void ClearHousesData() => DragonHousesData.Clear();
 }
 
 [System.Serializable]
