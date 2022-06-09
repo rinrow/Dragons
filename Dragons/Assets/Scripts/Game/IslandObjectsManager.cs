@@ -9,21 +9,19 @@ public class IslandObjectsManager : MonoBehaviour
     public DragonHouse House;
     public ObjectsPosSettingSO HousePosSetterSO;
 
-    private void OnEnable()
+    private DragonHouse DefHouse;
+
+    private void Start()
     {
-        PositionSetter.OnHouseSetted += AddDragonHouseToIslandData;
+        DefHouse = House;
     }
 
-    private void OnDisable()
-    {
-        PositionSetter.OnHouseSetted -= AddDragonHouseToIslandData;
-    }
+    private void OnEnable() => PositionSetter.OnHouseSetted += AddDragonHouseToIslandData;
+
+    private void OnDisable() => PositionSetter.OnHouseSetted -= AddDragonHouseToIslandData;
 
     [ContextMenu("AddHouse")]
-    public void S()
-    {
-        AddDragonHouse(House);
-    }
+    public void S() => AddDragonHouse(DefHouse);
 
     public void AddDragonHouseToIslandData()
     {

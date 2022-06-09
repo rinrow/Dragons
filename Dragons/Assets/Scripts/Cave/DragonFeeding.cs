@@ -22,7 +22,7 @@ public class DragonFeeding : MonoBehaviour, IDragHandler, IBeginDragHandler, IEn
     public void OnBeginDrag(PointerEventData eventData)
     {
         _oldPos = _food.position;
-        _playerFood = PlayerDataSO.PlayerFoodCount;
+        _playerFood = PlayerDataSO.FoodCount;
         if (_playerFood < currentDragon.Appetite)
             Debug.LogError("Player doesnt have food enough");
     }

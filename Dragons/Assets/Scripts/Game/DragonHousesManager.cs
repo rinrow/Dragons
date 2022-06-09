@@ -11,6 +11,8 @@ public class DragonHousesManager : MonoBehaviour
     
     private DragonHouse _dragonHouse;
     
+    public event System.Action<DragonHouse> OnAddDragon;
+
     private void OnEnable()
     {
         _addDragonButton.onClick.AddListener(AddDragon);
@@ -32,5 +34,6 @@ public class DragonHousesManager : MonoBehaviour
     private void AddDragon()
     {
         _dragonHouse.Add(Dragon);
+        OnAddDragon?.Invoke(_dragonHouse);
     }
 }

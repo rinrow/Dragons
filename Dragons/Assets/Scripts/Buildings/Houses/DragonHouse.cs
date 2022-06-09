@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,8 +12,5 @@ public class DragonHouse : MonoBehaviour
 
     public List<Dragon> Dragons { get => dragons; set => dragons = value; }
 
-    public void Add(Dragon dragon)
-    {
-        Dragons.Add(dragon);
-    }   
+    public void Add(Dragon dragon) => Dragons.Add(dragon);
 }

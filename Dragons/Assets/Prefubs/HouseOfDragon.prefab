@@ -97,11 +97,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   CaveTransition: {fileID: 11400000, guid: ece7cbabfe1c9bd409eb16313ff44570, type: 2}
   dragons:
-  - Name: Monday
-    <Health>k__BackingField: 12
-    <Damage>k__BackingField: 12
-    <FoodToNewLevel>k__BackingField: 21
-    <Appetite>k__BackingField: 1
+  - Name: 
+    <Health>k__BackingField: 0
+    <Damage>k__BackingField: 0
+    <FoodToNewLevel>k__BackingField: 0
+    <Appetite>k__BackingField: 0
     <Icon>k__BackingField: {fileID: 0}
 --- !u!65 &7228182473014523123
 BoxCollider:

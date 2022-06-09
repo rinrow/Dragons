@@ -20,6 +20,6 @@ public class Player : MonoBehaviour
 
     private void MinusFood(int num)
     {
-        PlayerDataSO.PlayerFoodCount -= num;
+        PlayerDataSO.MinusFood(num);
     }
 }

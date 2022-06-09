@@ -23,7 +23,9 @@ public class Island : MonoBehaviour
     private List<Vector3> _positions;
     private List<DragonHouse> _houses;
 
-    private void Awake()
+    public event System.Action<DragonHouse> OnHouseInit;
+
+    private void Start()
     {
         _positions = new List<Vector3>();
         _houses = new List<DragonHouse>();
@@ -35,6 +37,7 @@ public class Island : MonoBehaviour
 
     public void AddHouse(DragonHouse house)
     {
+        var t = house.transform.position;
         IslandData.AddHouse(house);
     }
 
@@ -45,6 +48,8 @@ public class Island : MonoBehaviour
             var temp = Instantiate(DragonHousePattern);
             DragonHouseData.ConvertToDH(item, temp);
             _houses.Add(temp);
+
+            OnHouseInit?.Invoke(temp);
         }
     }
 
